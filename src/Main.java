@@ -1,13 +1,11 @@
+@FunctionalInterface
+interface Greeting {
+    void sayHello(String name);
+}
+
 public class Main {
-    @SuppressWarnings("rawtypes")
     public static void main(String[] args) {
-        java.util.List list = new java.util.ArrayList();
-
-        list.add("Hello");
-        list.add("World");
-
-        for (Object obj: list) {
-            System.out.println(obj);
-        }
+        Greeting greeting = (name) -> System.out.println("Hello, " + name + "!");
+        greeting.sayHello("Alice");
     }
 }
